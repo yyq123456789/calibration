@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include "calibration.h"
 
 using namespace std;
 using namespace cv;

@@ -10,10 +10,18 @@ bool CCalibration::writeParams()
     out<<camK.at<float>(1, 1)<<endl;
     out<<camK.at<float>(0, 2)<<endl;
     out<<camK.at<float>(1, 2)<<endl;
+#ifdef CV
 	out << camDiscoeff.at<float>(0, 0) << endl;
 	out << camDiscoeff.at<float>(0, 1) << endl;
 	out << camDiscoeff.at<float>(0, 2) << endl;
 	out << camDiscoeff.at<float>(0, 3) << endl;
+	out << camDiscoeff.at<float>(0, 4) << endl;
+#elif defined FISHEYE
+	out << camDiscoeff.at<float>(0, 0) << endl;
+	out << camDiscoeff.at<float>(0, 1) << endl;
+	out << camDiscoeff.at<float>(0, 2) << endl;
+	out << camDiscoeff.at<float>(0, 3) << endl;
+#endif
     out.close();
     return true;
 }
